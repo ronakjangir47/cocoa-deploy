@@ -5,7 +5,8 @@ Gem::Specification.new do |s|
   s.summary     = %q{CocoaDeploy manage your releases and deploys them on GitHub and TestFlight}
   s.authors     = ["Ronak Jangir"]
   s.email       = 'ronakjangir47@gmail.com'
-  s.files       = ["lib/cocoa-deploy.rb"]
+  s.files         = `git ls-files`.split($/)
+  s.require_paths = ["lib"]
   s.executables = ["icap"]
   s.homepage    =
     'http://rubygems.org/gems/cocoa-deploy'

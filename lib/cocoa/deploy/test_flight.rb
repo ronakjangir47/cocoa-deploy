@@ -20,7 +20,6 @@ module Cocoa
       # }
 
       def self.upload(config={})
-        file = "YLProgressBarSample.ipa"
         response = `curl -X POST -F file=@#{file} -F api_token=#{config["api_token"]} -F team_token=#{config["team_token"]} -F notes='sdfsdfsdfd' #{BASE_URL}`
         parse_response(response)
       end

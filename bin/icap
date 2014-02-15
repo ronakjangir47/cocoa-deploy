@@ -1,1 +1,4 @@
+require 'cocoa-deploy'
 #!/usr/bin/env ruby
+
+CocoaDeploy.launch

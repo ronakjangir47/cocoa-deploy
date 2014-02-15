@@ -1,5 +1,5 @@
-require './cocoa/deploy/config'
-require './cocoa/deploy/test_flight'
+require 'cocoa/deploy/config'
+require 'cocoa/deploy/test_flight'
 
 class CocoaDeploy
 
@@ -9,5 +9,3 @@ class CocoaDeploy
   end
 
 end
-
-CocoaDeploy.launch
