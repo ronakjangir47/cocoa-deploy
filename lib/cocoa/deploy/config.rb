@@ -5,12 +5,11 @@ module Cocoa
   module Deploy
     class Config
 
-      CONFIG_OPTIONS = [:team_id]
-      PATH_TO_CONFIG_FILE = "cocoa_deploy.yml"
+      PATH_TO_CONFIG_FILE = "/cocoa_deploy.yml"
 
       def self.configure
         begin
-          config = YAML::load(IO.read(PATH_TO_CONFIG_FILE))
+          config = load_file
         rescue Errno::ENOENT
           puts(:error, "YAML configuration file couldn't be found"); return
         rescue Psych::SyntaxError
@@ -18,6 +17,12 @@ module Cocoa
         end
         config
       end
+
+      private
+
+        def self.load_file
+          YAML::load(IO.read(Dir.pwd + PATH_TO_CONFIG_FILE))
+        end
 
     end
   end

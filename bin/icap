@@ -1,4 +1,4 @@
-require 'cocoa-deploy'
 #!/usr/bin/env ruby
+require 'cocoa-deploy'
 
-CocoaDeploy.launch
+CocoaDeploy.launch(ARGV[0])
